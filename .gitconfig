@@ -18,16 +18,11 @@
   ui = auto
 [core]
   fileMode = true
-[credential]
-  helper = store
-[diff "ansible-vault"]
-  textconv = ansible-vault view
-  cachetextconv = true
 [fetch]
   prune = true
 [push]
   default = current
 [user]
-  name = Carl Bennett
-  email = carl@carlbennett.me
-  signingkey = A8F24410
+  name = Keith Bennett
+  email = keithb+github@genebygene.com
+  signingkey = 7CEC52922863A554
