@@ -30,3 +30,7 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 set tw=0
 set formatoptions-=t
 
+" KeithB: disable comment continuation
+" http://vim.wikia.com/wiki/Disable_automatic_comment_insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
