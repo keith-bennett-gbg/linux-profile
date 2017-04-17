@@ -6,6 +6,10 @@
   cl  = clone
   co  = checkout
   cp  = cherry-pick
+  sign-commit = commit -S
+  sc  = commit -S
+  sign-merge = merge -S
+  sm  = merge -S
   d   = "!f() { git diff --color "$1"^.."$1"; }; f"
   dlc = diff --cached HEAD^
   i   = init
@@ -24,5 +28,5 @@
   default = current
 [user]
   name = Keith Bennett
-  email = keithb+github@genebygene.com
-  signingkey = 7CEC52922863A554
+  email = kanezor+kf25.kcore.knightoftheinter.net@gmail.com
+  signingkey = 5883ACCB8912A2B9
