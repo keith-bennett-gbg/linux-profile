@@ -6,6 +6,10 @@
   cl  = clone
   co  = checkout
   cp  = cherry-pick
+  sign-commit = commit -S
+  sc  = commit -S
+  sign-merge = merge -S
+  sm  = merge -S
   d   = "!f() { git diff --color "$1"^.."$1"; }; f"
   dlc = diff --cached HEAD^
   i   = init
@@ -18,16 +22,11 @@
   ui = auto
 [core]
   fileMode = true
-[credential]
-  helper = store
-[diff "ansible-vault"]
-  textconv = ansible-vault view
-  cachetextconv = true
 [fetch]
   prune = true
 [push]
   default = current
 [user]
-  name = Carl Bennett
-  email = carl@carlbennett.me
-  signingkey = A8F24410
+  name = Keith Bennett
+  email = kanezor+kf25.kcore.knightoftheinter.net@gmail.com
+  signingkey = 5883ACCB8912A2B9

@@ -39,8 +39,9 @@ if [ -f "/bin/firewall-cmd" ] || [ -f "/usr/sbin/csf" ]; then
   alias firewall-denyr=deny_ip_remove
 fi
 
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+[ -x "$(which vim)" ] || { >&2 printf "\033[1;31mwarning\033[0;31m: vim not found~\033[0;0m\n"; }
+export EDITOR="$(which vim)"
+export VISUAL="${EDITOR}"
 
 [ -n "$PS1" ] && \
   export PS1="\[$(tput sgr0)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
@@ -55,3 +56,16 @@ shopt -s histappend                     # append to history, don't overwrite it
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+
+# KeithB: default is `ulimit -c 0` -- But I want to always allow core dumps for debugging.
+ulimit -c unlimited
+
+# KeithB: GCC colors are beautiful and helpful
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# KeithB: have git print the status of the profile upon login.
+git status "${HOME}"
+
+# KeithB: load .profile (local machine profile) if it exists
+[ -f "${HOME}/.profile" ] && . "${HOME}/.profile"
+
