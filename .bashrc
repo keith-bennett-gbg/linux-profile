@@ -53,6 +53,7 @@ export HISTCONTROL=ignoredups:erasedups # no duplicate entries
 export HISTSIZE=10000                   # big history
 export HISTFILESIZE=10000               # big history
 shopt -s histappend                     # append to history, don't overwrite it
+shopt -s checkwinsize                   # update LINES and COLUMNS after every command
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
@@ -69,3 +70,5 @@ git status "${HOME}"
 # KeithB: load .profile (local machine profile) if it exists
 [ -f "${HOME}/.profile" ] && . "${HOME}/.profile"
 
+# KeithB: .bash_aliases loads stuff from ~/.bash
+source ~/.bash_aliases
