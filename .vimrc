@@ -1,5 +1,7 @@
+set nocompatible " stop resetting everything
+
 colorscheme molokai
-filetype indent plugin on
+" filetype indent plugin on " stop auto-indenting
 
 " vim --version | grep -oP "[-+]clipboard"
 " Note that copied lines will include whitespace.
