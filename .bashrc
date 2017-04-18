@@ -45,7 +45,7 @@ export EDITOR="$(which vim)"
 export VISUAL="${EDITOR}"
 
 [ -n "$PS1" ] && \
-  export PS1="\[$(tput sgr0)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+  export PS1="\[$(tput sgr0)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h\[$(tput setaf 2)\]:\[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 # KeithB: fix Terminal titles with a new prompt
 export PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname):${PWD}\a"'
