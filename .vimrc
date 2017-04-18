@@ -45,6 +45,7 @@ set softtabstop=0 " no
 set noautoindent  " just no
 set nosmartindent " really not interested in your shit, vim
 set norevins      " 'reverse insert' is dumb too
+set tabstop=4     " this is probably what you're looking for !
 
 " Don't wrap long lines at all tyvm
 set textwidth=0
