@@ -13,6 +13,7 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias ls='ls --color=always'
 
 [ -n "$TERM" ] && alias htop='TERM=screen htop'
 
@@ -43,8 +44,12 @@ fi
 export EDITOR="$(which vim)"
 export VISUAL="${EDITOR}"
 
+# Better prompt for shell, but only set if PS1 has already been set (PS1 is not set for non-interactive sessions)
 [ -n "$PS1" ] && \
-  export PS1="\[$(tput sgr0)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+  export PS1="\[$(tput sgr0)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h\[$(tput setaf 2)\]:\[$(tput setaf 5)\]\w\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
+# KeithB: fix Terminal titles with a new prompt
+export PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname):${PWD}\a"'
 
 [ -x /usr/bin/dircolors ] && [ -s ~/.dir_colors ] && eval "$(/usr/bin/dircolors ~/.dir_colors)"
 
@@ -53,6 +58,7 @@ export HISTCONTROL=ignoredups:erasedups # no duplicate entries
 export HISTSIZE=10000                   # big history
 export HISTFILESIZE=10000               # big history
 shopt -s histappend                     # append to history, don't overwrite it
+shopt -s checkwinsize                   # update LINES and COLUMNS after every command
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
@@ -64,8 +70,12 @@ ulimit -c unlimited
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # KeithB: have git print the status of the profile upon login.
-git status "${HOME}"
+# Note: this can break non-interactive sessions (such as scp and sftp), so check PS1
+[ ! -z "${PS1}" ] && [ "${PWD}" == "${HOME}" ] && git status
 
 # KeithB: load .profile (local machine profile) if it exists
 [ -f "${HOME}/.profile" ] && . "${HOME}/.profile"
+
+# KeithB: .bash_aliases loads stuff from ~/.bash
+source ~/.bash_aliases
 
