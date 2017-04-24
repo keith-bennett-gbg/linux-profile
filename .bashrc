@@ -61,7 +61,7 @@ shopt -s histappend                     # append to history, don't overwrite it
 shopt -s checkwinsize                   # update LINES and COLUMNS after every command
 
 # Save and reload the history after each command finishes
-export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+# export PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
 
 # KeithB: default is `ulimit -c 0` -- But I want to always allow core dumps for debugging.
 ulimit -c unlimited
