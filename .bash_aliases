@@ -1,5 +1,5 @@
 
-alias mygrep="grep --color -nR -P"
+alias grep="grep --color=auto"
 alias hhtop="htop -C -d100"
 
 source ${HOME}/.bash/sshi.bash
