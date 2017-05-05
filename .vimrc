@@ -59,3 +59,4 @@ set comments=""
 set commentstring=""
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+set scrolloff=5
