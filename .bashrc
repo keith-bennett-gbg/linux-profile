@@ -13,7 +13,7 @@
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ls='ls --color=always'
+alias ls='ls --color=auto'
 
 [ -n "$TERM" ] && alias htop='TERM=screen htop'
 
