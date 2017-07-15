@@ -79,3 +79,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # KeithB: .bash_aliases loads stuff from ~/.bash
 source ~/.bash_aliases
 
+# KeithB: Fix issue with Fedora 25 Cinnamon not opening new Terminal tabs in CWD
+[ -f /etc/profile.d/vte.sh ] && . /etc/profile.d/vte.sh
+
