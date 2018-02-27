@@ -79,3 +79,13 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # KeithB: .bash_aliases loads stuff from ~/.bash
 source ~/.bash_aliases
 
+# KeithB: from `man gpg-agent` to work with PGP smart cards via gpg2
+GPG_TTY=$(tty)
+export GPG_TTY
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]
+then
+	export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+fi
+
