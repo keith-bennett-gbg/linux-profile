@@ -80,7 +80,7 @@ sshi() {
 		return 1
 	fi
 
+	>&2 echo ssh -i "${key}" "${username}@${target_host}" "${@:2}"
 	ssh -i "${key}" "${username}@${target_host}" "${@:2}"
 }
-
 
