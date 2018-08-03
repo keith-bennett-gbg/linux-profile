@@ -86,9 +86,11 @@ sshi() {
 	# https://security.stackexchange.com/questions/5096/rsa-vs-dsa-for-ssh-authentication-keys/41509#41509
 	# https://security.stackexchange.com/questions/50878/ecdsa-vs-ecdh-vs-ed25519-vs-curve25519
 	# https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/
+	# https://latacora.singles/2018/08/03/the-default-openssh.html -- warning about default privkey crypto, says ed25519 isn't vuln
 	#
 	# RSA is deprecated (non-deterministic keygen, requires large key length)
 	# ECDSA is deprecated (breaks if RNG is broken)
+	#
 	deprecated=( RSA ECDSA )
 	for keytype in "${deprecated[@]}"
 	do
