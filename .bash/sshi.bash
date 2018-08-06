@@ -87,9 +87,14 @@ sshi() {
 	# https://security.stackexchange.com/questions/50878/ecdsa-vs-ecdh-vs-ed25519-vs-curve25519
 	# https://blog.cloudflare.com/ecdsa-the-digital-signature-algorithm-of-a-better-internet/
 	# https://latacora.singles/2018/08/03/the-default-openssh.html -- warning about default privkey crypto, says ed25519 isn't vuln
+	# https://blog.g3rt.nl/upgrade-your-ssh-keys.html -- DSA and 1024-bit-RSA are definitely deprecated. Talks about ssh-keygen -o -a 100
 	#
-	# RSA is deprecated (non-deterministic keygen, requires large key length)
+	# DSA is DO NOT USE
+	# RSA < 2048 bit is DO NOT USE
+	# RSA = 2048 bit is deprecated (non-deterministic keygen, requires large key length)
+	# RSA 4096 bit is fine (personally deprecated)
 	# ECDSA is deprecated (breaks if RNG is broken)
+	# Ed25519 is fine, but should use `-a` with `ssh-keygen`
 	#
 	deprecated=( RSA ECDSA )
 	for keytype in "${deprecated[@]}"
