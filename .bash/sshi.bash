@@ -62,7 +62,7 @@ sshi() {
 		# Look for global LDAP keys "remote_username@search_path" keys
 		if [ -f "/etc/resolv.conf" ]
 		then
-			mapfile -t search_paths < <(grep -P "^\s*search\s+" /etc/resolv.conf | sed -r 's/^\s+//g' | sed -r 's/\s+/\t/g' | cut --complement -f 1)
+			mapfile -t search_paths < <(grep -P "^\s*search\s+" /etc/resolv.conf | sed -r 's/^\s+//g' | sed -r 's/\s+/\n/g' | cut --complement -f 1)
 			if [ "${#search_paths[@]}" -gt 0 ]
 			then
 				for search_path in "${search_paths[@]}"
