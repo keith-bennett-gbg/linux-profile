@@ -1,0 +1,6 @@
+# https://people.freedesktop.org/~dbn/pkg-config-guide.html
+Name: bash-completions pkg-config
+Description: bash-completions pkg-config file (to fix "/etc/bash_completion.d/yum-utils.bash: line 2: /yum: No such file or directory" from that script being retarded about pkg-config)
+Version: 1.0.0
+completionsdir=/home/keithb/.local/share/bash-completion/completions
+

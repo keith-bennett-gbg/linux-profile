@@ -4,6 +4,9 @@
 [ -f /etc/bashrc ] && . /etc/bashrc
 
 # Load bash completions
+# Some completions query pkg-config, so set that now.
+PKG_CONFIG_PATH="${HOME}"/.local/share/pkg-config"${PKG_CONFIG_PATH:+:}${PKG_CONFIG_PATH}"
+export PKG_CONFIG_PATH
 . $HOME/.local/share/bash-completion/bash_completion
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
