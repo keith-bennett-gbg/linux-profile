@@ -92,3 +92,5 @@ then
 	export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 fi
 
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
