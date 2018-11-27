@@ -1,0 +1,44 @@
+{
+    "workbench.settings.editor": "ui",
+
+    // Do not re-use opened tabs.
+    // https://stackoverflow.com/a/38723094/1111557
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    "editor.fontSize": 8,
+    "editor.fontFamily": "'monospace'",
+    "editor.cursorStyle": "block",
+
+    "editor.wordWrap": "off", // "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.rulers": [
+        80, 120
+    ],
+    "editor.insertSpaces": false,
+    "workbench.colorTheme": "bioSyntax",
+    "editor.largeFileOptimizations": false,
+
+    "[python]": {
+        "editor.detectIndentation": false,
+        "editor.useTabStops": false,
+        "editor.insertSpaces": true,
+    },
+    "python.venvPath": "/home/keithb/python-venvs",
+    "python.pythonPath": "/usr/bin/python3",
+
+    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontSize": 9,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.enableBell": true,
+
+    "zenMode.hideTabs": false,
+    "workbench.iconTheme": "material-icon-theme",
+
+    "[markdown]": {
+        "editor.wordWrap": "off"
+    }
+}
