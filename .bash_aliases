@@ -8,4 +8,6 @@ source "${HOME}/.bash/sshi.bash"
 source "${HOME}/.bash/scpi.bash"
 source "${HOME}/.bash/tmux_pane_id.bash"
 source "${HOME}/.bash/is-reboot-required.bash"
+source "${HOME}/.bash/urlencode.bash"
+source "${HOME}/.bash/recover-terminals.bash"
 
