@@ -95,3 +95,6 @@ then
 	export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 fi
 
+export PATH="/opt/kitware/cmake/v3.12.2/bin:${PATH}"
+export BOOST_ROOT=/opt/boost/boost-1.67.0-gcc-7.3.1-fPIC
+
