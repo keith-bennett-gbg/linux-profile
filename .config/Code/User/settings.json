@@ -1,90 +1,164 @@
 {
-	"editor.fontSize":10,
-	"editor.insertSpaces": false,
-	"workbench.colorTheme": "Red",
-	"workbench.colorCustomizations": {
-		//"statusBar.background": "#666666",
-		//"panel.background": "#555555",
-		//"sideBar.background": "#444444"
-		"editorCursor.foreground": "#ff7fff"
-	},
-	"editor.cursorStyle": "block",
-	"editor.renderWhitespace": "all",
-	"terminal.integrated.cursorBlinking": true,
-	"terminal.integrated.cursorStyle": "block",
-	"terminal.integrated.rendererType": "dom",
-	"terminal.integrated.fontFamily": "monospace",
-	"terminal.integrated.fontSize":10,
-	"cmake.buildToolArgs": [
-	],
-	"cmake.cmakePath": "/opt/kitware/cmake/v3.12.2/bin/cmake",
-	"cmake.configureArgs": [
-		"-DBOOST_ROOT=/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC"
-	],
-	"cmake.configureEnvironment": {
-		"BOOST_ROOT": "/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC"
-	},
-	"cmake.configureOnOpen": true,
-	"C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
-	"C_Cpp.clang_format_fallbackStyle": "none",
-	"C_Cpp.default.cppStandard": "c++17",
-	"C_Cpp.default.cStandard": "c11",
-	"C_Cpp.default.includePath": "/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC/include",
-	"C_Cpp.default.intelliSenseMode": "gcc-x64",
-	"C_Cpp.loggingLevel": "Warning",
-	"files.associations": {
-		"any": "cpp",
-		"array": "cpp",
-		"atomic": "cpp",
-		"hash_map": "cpp",
-		"hash_set": "cpp",
-		"*.tcc": "cpp",
-		"bitset": "cpp",
-		"cctype": "cpp",
-		"chrono": "cpp",
-		"clocale": "cpp",
-		"cmath": "cpp",
-		"codecvt": "cpp",
-		"condition_variable": "cpp",
-		"cstdarg": "cpp",
-		"cstddef": "cpp",
-		"cstdint": "cpp",
-		"cstdio": "cpp",
-		"cstdlib": "cpp",
-		"cstring": "cpp",
-		"ctime": "cpp",
-		"cwchar": "cpp",
-		"cwctype": "cpp",
-		"deque": "cpp",
-		"forward_list": "cpp",
-		"list": "cpp",
-		"unordered_map": "cpp",
-		"unordered_set": "cpp",
-		"vector": "cpp",
-		"exception": "cpp",
-		"string_view": "cpp",
-		"fstream": "cpp",
-		"functional": "cpp",
-		"initializer_list": "cpp",
-		"iomanip": "cpp",
-		"iosfwd": "cpp",
-		"iostream": "cpp",
-		"istream": "cpp",
-		"limits": "cpp",
-		"memory": "cpp",
-		"mutex": "cpp",
-		"new": "cpp",
-		"optional": "cpp",
-		"ostream": "cpp",
-		"ratio": "cpp",
-		"sstream": "cpp",
-		"stdexcept": "cpp",
-		"streambuf": "cpp",
-		"system_error": "cpp",
-		"thread": "cpp",
-		"tuple": "cpp",
-		"type_traits": "cpp",
-		"typeindex": "cpp",
-		"typeinfo": "cpp",
-		"utility": "cpp"
-	}}
+    // Comment blocks help with local merge conflicts to not be massive.
+    // Sort by name.
+
+    //
+    // "cmake"
+    //
+    "cmake.buildToolArgs": [
+    ],
+    "cmake.cmakePath": "/opt/kitware/cmake/v3.12.2/bin/cmake",
+    "cmake.configureArgs": [
+        "-DBOOST_ROOT=/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC"
+    ],
+    "cmake.configureEnvironment": {
+        "BOOST_ROOT": "/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC"
+    },
+    "cmake.configureOnOpen": true,
+    
+    //
+    // C_cpp
+    //
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools",
+    "C_Cpp.clang_format_fallbackStyle": "none",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.includePath": "/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC/include",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.loggingLevel": "Warning",
+
+    //
+    // "editor"
+    //
+    "editor.cursorStyle": "block",
+    "editor.fontFamily": "'monospace'",
+    "editor.fontSize": 8,
+    "editor.insertSpaces": false, // tabs plzkthx
+    "editor.largeFileOptimizations": false, // what is this?
+    "editor.renderControlCharacters": true, // show potential security issues
+    "editor.renderWhitespace": "all", // tabs vs spaces
+    "editor.rulers": [
+        80, 120
+    ],
+    "editor.wordWrap": "off", // "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+
+    //
+    // "files"
+    //
+    "files.associations": {
+        "any": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "cctype": "cpp",
+        "chrono": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "string_view": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "optional": "cpp",
+        "ostream": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "thread": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "utility": "cpp"
+    }}
+
+    //
+    // "[markdown]"
+    //
+    "[markdown]": {
+        "editor.wordWrap": "off"
+    },
+
+    //
+    // "python"
+    //
+    "[python]": {
+        "editor.detectIndentation": false,
+        "editor.useTabStops": false,
+        "editor.insertSpaces": true,
+    },
+    "python.venvPath": "/home/keithb/python-venvs",
+    "python.pythonPath": "/usr/bin/python3",
+
+    //
+    // "terminal"
+    //
+    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontSize": 9,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "block",
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.rendererType": "dom",
+
+    // wait what was this for?
+    // "[markdown]"
+    "[markdown]": {
+        "editor.wordWrap": "off"
+    }
+
+    //
+    // "workbench"
+    //
+    "workbench.settings.editor": "ui",
+    // Do not re-use opened tabs.
+    // https://stackoverflow.com/a/38723094/1111557
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    // Red.
+    "workbench.colorTheme": "Red",
+    "workbench.colorCustomizations": {
+        //"statusBar.background": "#666666",
+        //"panel.background": "#555555",
+        //"sideBar.background": "#444444"
+        "editorCursor.foreground": "#ff7fff"
+    },
+    // Left side icons.
+    "workbench.iconTheme": "material-icon-theme",
+
+    //
+    // "zenMode"
+    //
+    "zenMode.hideTabs": false
+
+}
