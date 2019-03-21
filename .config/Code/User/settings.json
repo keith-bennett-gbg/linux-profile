@@ -32,7 +32,7 @@
     //
     "editor.cursorStyle": "block",
     "editor.fontFamily": "'monospace'",
-    "editor.fontSize": 8,
+    "editor.fontSize": 10,
     "editor.insertSpaces": false, // tabs plzkthx
     "editor.largeFileOptimizations": false, // what is this?
     "editor.renderControlCharacters": true, // show potential security issues
@@ -101,7 +101,7 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp"
-    }}
+    },
 
     //
     // "[markdown]"
@@ -125,7 +125,7 @@
     // "terminal"
     //
     "terminal.integrated.fontFamily": "monospace",
-    "terminal.integrated.fontSize": 9,
+    "terminal.integrated.fontSize": 10,
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "block",
     "terminal.integrated.enableBell": true,
@@ -135,7 +135,7 @@
     // "[markdown]"
     "[markdown]": {
         "editor.wordWrap": "off"
-    }
+    },
 
     //
     // "workbench"
