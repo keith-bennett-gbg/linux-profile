@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 
 # List of garbage apps
+#
+# Disabling these is perfectly "safe". Some apps might hate you. Those apps are
+# garbage and you shouldn't use them.
 garbage=(
 	# Gnome Virtual Filesystem
 	# I absolutely DO NOT want Gnome to run daemons for garbage.
@@ -11,22 +14,26 @@ garbage=(
 	# dav: insecure HTTP WebDAV
 	# dnssd: DNS Service Discovery
 	# ftp: insecure FTP
-	# http: insecure HTTP
-	# gphoto2: GNU Photo
-	# mtd: Media Transfer Protocol
-	# nfs: insecure NFS
-	# smb: Windows Samba
+	# fuse: I use FUSE manually. Fuck your management of my shit.
 	# goa: Gnome Online Accounts
+	# gphoto2: GNU Photo
+	# http: insecure HTTP
+	# metadata: GVFS metadata handler. Fuck your shit, for real.
+	# mtp: Media Transfer Protocol
+	# smb: Windows Samba
+	# nfs: insecure NFS
+	# sftp: piss off I'll do it myself
 	#
 	# Extra shitty shit like such:
+	# computer: computer://
+	# network: network://
 	# recent: recent://
 	# trash: trash://
-	# network: network://
 	# 
-	/usr/lib/gvfs/gvfs-{afc,afp,afp-browse,dav,goa,gphoto2,mtp,smb,smb-browse,recent,trash,network,dnssd}-volume-monitor
-	/usr/lib/gvfs/gvfsd-{afc,afp,afp-browse,dav,goa,gphoto2,mtp,smb,smb-browse,recent,trash,network,dnssd}
+	/usr/lib/gvfs/gvfs-{afc,afp,afp-browse,dav,dnssd,ftp,fuse,goa,gphoto2,http,metadata,mtp,smb,smb-browse,nfs,sftp,computer,network,recent,trash}-volume-monitor
+	/usr/lib/gvfs/gvfsd-{afc,afp,afp-browse,dav,dnssd,ftp,fuse,goa,gphoto2,http,metadata,mtp,smb,smb-browse,nfs,sftp,computer,network,recent,trash}
 
-	# Any sort of credential-caching "agent" whatsoever is an anti-pattern.
+	# Any sort of credential-caching "agent" whatsoever is an insecure anti-pattern.
 	# -> ssh-agent
 	# -> seahorse
 	# -> gnome-keyring
