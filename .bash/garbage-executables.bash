@@ -57,9 +57,31 @@ garbage=( "$(
 	done
 )" )
 
+garbage_files=(
+	# PAM: why the !@#$ do you need access to a keyring? Piss off!
+	# And ssh-add? That !@#$ing garbage has bugs
+	/lib/security/pam_gnome_keyring.so
+	/lib/x86_64-linux-gnu/security/pam_gnome_keyring.so
+	/lib/security/pam_ssh_add.so
+	/lib/x86_64-linux-gnu/security/pam_ssh_add.so
+)
+
+garbage_files=( "$(
+	for g in "${garbage_files[@]}"
+	do
+		if [ -f "${g}" ]
+		then
+			echo -n "${g} "
+		fi
+	done
+)" )
+
+garbage+=( "${garbage_files[@]}" )
+
 # If any are, then tell me.
-if [ "${#garbage}" -gt 0 ]
+if [ "${#garbage[@]}" -gt 0 ]
 then
-	>&2 echo "~/.bashrc: garbage is executable: ${garbage[@]}"
+	>&2 echo "~/.bashrc -> ~/.bash/garbage-executables.bash: garbage is executable: ${garbage[*]}"
 	exit 1
 fi
+

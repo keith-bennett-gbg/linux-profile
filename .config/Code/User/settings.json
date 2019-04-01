@@ -7,7 +7,7 @@
     //
     "cmake.buildToolArgs": [
     ],
-    "cmake.cmakePath": "/opt/kitware/cmake/v3.12.2/bin/cmake",
+    "cmake.cmakePath": "/usr/local/bin/cmake",
     "cmake.configureArgs": [
         "-DBOOST_ROOT=/opt/boost/boost-1.68.0-gcc-7.3.1-fPIC"
     ],
@@ -54,6 +54,7 @@
     "docker.languageserver.diagnostics.deprecatedMaintainer": "error",
     "docker.languageserver.diagnostics.instructionCasing": "error",
     "docker.languageserver.diagnostics.directiveCasing": "error",
+    "docker.languageserver.diagnostics.instructionCmdMultiple": "error",
     "docker.languageserver.diagnostics.instructionEntrypointMultiple": "error",
     "docker.languageserver.diagnostics.instructionHealthcheckMultiple": "error",
     "docker.languageserver.diagnostics.instructionJSONInSingleQuotes": "error",
@@ -75,6 +76,11 @@
     ],
     "editor.wordWrap": "off", // "wordWrapColumn",
     "editor.wordWrapColumn": 80,
+
+    //
+    // "extensions"
+    //
+    "extensions.ignoreRecommendations": true,
 
     //
     // "files"
