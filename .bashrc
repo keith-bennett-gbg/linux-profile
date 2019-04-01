@@ -99,4 +99,5 @@ export PATH="/opt/kitware/cmake/v3.12.2/bin:${PATH}"
 export BOOST_ROOT=/opt/boost/current
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-bash "${HOME}/.bash/garbage-executables.bash"
+source "${HOME}/.bash/garbage-executables.bash"
+
