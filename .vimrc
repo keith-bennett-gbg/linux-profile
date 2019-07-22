@@ -60,3 +60,8 @@ set commentstring=""
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 set scrolloff=5
+
+" KeithB: disable modeline
+" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+set nomodeline
+
