@@ -24,20 +24,24 @@ alias ls='ls --color=auto'
 
 if [ -f "/bin/firewall-cmd" ] || [ -f "/usr/sbin/csf" ]; then
   deny_ip_add() {
-    [ "$1" == "" ] && printf "\033[1;31mYou must specify an IP address to block.\033[0;0m\n" && return 1
-    [ -f "/bin/firewall-cmd" ] &&
-      /usr/bin/sudo /bin/firewall-cmd --zone="drop" --add-source="$1" &&
-      /usr/bin/sudo /bin/firewall-cmd --permanent --zone="drop" --add-source="$1" 1>/dev/null
-    [ -f "/usr/sbin/csf" ] &&
-      /usr/bin/sudo /usr/sbin/csf -d "$1"
+    [ "$1" == "" ] \
+      && printf "\033[1;31mYou must specify an IP address to block.\033[0;0m\n" \
+      && return 1
+    [ -f "/bin/firewall-cmd" ] \
+      && /usr/bin/sudo /bin/firewall-cmd --zone="drop" --add-source="$1" \
+      && /usr/bin/sudo /bin/firewall-cmd --permanent --zone="drop" --add-source="$1" 1>/dev/null
+    [ -f "/usr/sbin/csf" ] \
+      && /usr/bin/sudo /usr/sbin/csf -d "$1"
   }
   deny_ip_remove() {
-    [ "$1" == "" ] && printf "\033[1;31mYou must specify an IP address to unblock.\033[0;0m\n" && return 1
-    [ -f "/bin/firewall-cmd" ] &&
-      /usr/bin/sudo /bin/firewall-cmd --zone="drop" --remove-source="$1" &&
-      /usr/bin/sudo /bin/firewall-cmd --permanent --zone="drop" --remove-source="$1" 1>/dev/null
-    [ -f "/usr/sbin/csf" ] &&
-      /usr/bin/sudo /usr/sbin/csf -dr "$1"
+    [ "$1" == "" ] \
+      && printf "\033[1;31mYou must specify an IP address to unblock.\033[0;0m\n" \
+      && return 1
+    [ -f "/bin/firewall-cmd" ] \
+      && /usr/bin/sudo /bin/firewall-cmd --zone="drop" --remove-source="$1" \
+      && /usr/bin/sudo /bin/firewall-cmd --permanent --zone="drop" --remove-source="$1" 1>/dev/null
+    [ -f "/usr/sbin/csf" ] \
+      && /usr/bin/sudo /usr/sbin/csf -dr "$1"
   }
   alias firewall-deny=deny_ip_add
   alias firewall-denyr=deny_ip_remove
@@ -142,6 +146,7 @@ export GPG_TTY
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]
 then
+	# gpg-agent needed for Yubikey to work with SSH.
 	export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 fi
 
@@ -150,4 +155,33 @@ export BOOST_ROOT=/opt/boost/current
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 source "${HOME}/.bash/garbage-executables.bash"
+
+# if ! which python3.8
+# then
+# 	# directory was set up following these instructions
+# 	# https://stackoverflow.com/a/50319252/1111557
+# 	# mkdir -p "${HOME}/python3" \
+# 	# 	&& cd "${HOME}/python3" \
+# 	# 	&& wget 'https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tar.xz' \
+# 	# 	&& tar -xf Python-3.8.0.tar.xz \
+# 	# 	&& mkdir -p $(pwd)/root \
+# 	# 	&& ./configure --prefix=$(pwd)/root \
+# 	# 	&& make -j$(nproc) \
+# 	# 	&& make install \
+# 	# 	&& python3 -m virtualenv --no-site-packages -p root/bin/python3 env
+# 	alias python3.8="${HOME}/python3/Python-3.8.0/env/bin/python3"
+# fi
+# https://github.com/pyenv/pyenv#installation
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
+if [ -x "${HOME}/.pyenv/bin/pyenv" ]
+then
+	eval "$(pyenv init -)"
+fi
+
+# Add Rust's Cargo bin, eg for b3sum
+export PATH="${PATH}:${HOME}/.cargo/bin"
+
+# https://stackoverflow.com/a/33786325/1111557
+export PYTHONSTARTUP="${HOME}/.pythonrc.py"
 

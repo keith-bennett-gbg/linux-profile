@@ -3,13 +3,49 @@
     // Sort by name.
 
     //
+    // "breadcrumbs"
+    //
+    "breadcrumbs.enabled": true,
+
+    //
+    // "atlascode" -- Atlassian's VS Code Extension
+    //
+    "atlascode.bitbucket.explorer.notifications.pullRequestCreated": false,
+    "atlascode.bitbucket.explorer.relatedBitbucketIssues.enabled": false,
+    "atlascode.bitbucket.explorer.relatedJiraIssues.enabled": false,
+    "atlascode.bitbucket.explorer.enabled": false,
+    "atlascode.bitbucket.issues.monitorEnabled": false,
+    "atlascode.bitbucket.issues.explorerEnabled": false,
+    "atlascode.bitbucket.pipelines.monitorEnabled": false,
+    "atlascode.bitbucket.pipelines.explorerEnabled": false,
+    "atlascode.bitbucket.statusbar.showLogin": false,
+    "atlascode.bitbucket.statusbar.showUser": false,
+    "atlascode.bitbucket.statusbar.showProduct": false,
+    "atlascode.bitbucket.statusbar.enabled": false,
+    "atlascode.jira.customJql": [
+        {
+            "jql": [],
+            "siteId": ""
+        }
+    ],
+    "atlascode.jira.explorer.refreshInterval": 6,
+    "atlascode.jira.workingProject": {
+        "id": "",
+        "name": "",
+        "key": ""
+    },
+    "atlascode.jira.workingSite": {
+        "baseUrlSuffix": "atlassian.net"
+    },
+
+    //
     // "cmake"
     //
     "cmake.buildToolArgs": [
     ],
     "cmake.cmakePath": "/usr/local/bin/cmake",
     "cmake.configureArgs": [
-        "-DBOOST_ROOT=/usr/local/boost-1.70.0-gcc-7.3.1-fPIC"
+        "-DBOOST_ROOT=/opt/boost/current"
     ],
     "cmake.configureEnvironment": {
         "BOOST_ROOT": "/usr/local/boost-1.70.0-gcc-7.3.1-fPIC"
@@ -74,6 +110,7 @@
     "editor.rulers": [
         80, 120
     ],
+    "editor.tabSize": 4,
     "editor.wordWrap": "off", // "wordWrapColumn",
     "editor.wordWrapColumn": 80,
 
@@ -210,6 +247,9 @@
     //
     // "zenMode"
     //
-    "zenMode.hideTabs": false
+    "zenMode.hideTabs": false,
+    "window.zoomLevel": 0,
+    "workbench.sideBar.location": "left",
+    "workbench.startupEditor": "newUntitledFile"
 
 }
